@@ -1,3 +1,33 @@
+node-webkit (0.7) unstable; urgency=low
+
+  * Agregando soporte de codecs video y audio mp3/mp4.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Fri, 04 Jul 2014 16:19:29 +0200
+
+node-webkit (0.6) unstable; urgency=low
+
+  * Actualizando información de arquitecturas. 
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Wed, 12 Feb 2014 18:03:03 +0100
+
+node-webkit (0.5) unstable; urgency=low
+
+  * Reparando el bug de arquitecturas.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Wed, 12 Feb 2014 17:15:12 +0100
+
+node-webkit (0.4) unstable; urgency=low
+
+  * Actualizando dependencias de libudev.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Mon, 10 Feb 2014 20:12:18 +0100
+
+node-webkit (0.3) unstable; urgency=low
+
+  * Poniendo una marca para indicar la arquitectura del paquete. 
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Fri, 27 Dec 2013 15:33:07 +0100
+
 node-webkit (0.2) unstable; urgency=low
 
   * Prueba de empaquetado con dependencias.

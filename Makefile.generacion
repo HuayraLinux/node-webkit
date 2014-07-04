@@ -1,0 +1,9 @@
+all:
+	@echo ""
+	@echo " → generar        Arma los paquetes para i386 y amd64"
+	@echo ""
+	@echo ""
+
+generar:
+	ARCH=i386 pdebuild
+	ARCH=amd64 pdebuild --debbuildopts -B

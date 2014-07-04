@@ -24,12 +24,19 @@ export DEB_DH_SHLIBDEPS_ARGS_ALL
 
 override_dh_install:
 	mkdir debian/tmp
+
 ifeq ($(ARCH), i386)
 	cd packages; tar xzf node-webkit-v0.7.5-linux-ia32.tar.gz
+	cd packages; tar xzf libs.tar.gz
 	mv packages/node-webkit-v0.7.5-linux-ia32 debian/tmp/node-webkit
+	echo "arch: i386" > debian/tmp/node-webkit/arch.txt
+	mv packages/libffmpegsumo.so debian/tmp/node-webkit
 else
 	cd packages; tar xzf node-webkit-v0.7.5-linux-x64.tar.gz
+	cd packages; tar xzf libs.tar.gz
 	mv packages/node-webkit-v0.7.5-linux-x64 debian/tmp/node-webkit
+	echo "arch: amd64" > debian/tmp/node-webkit/arch.txt
+	mv packages/libffmpegsumo.so debian/tmp/node-webkit
 endif
 	dh_install
 
