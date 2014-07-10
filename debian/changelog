@@ -1,3 +1,9 @@
+node-webkit (0.8) unstable; urgency=low
+
+  * Arreglo menor en los scripts de generación. 
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Thu, 10 Jul 2014 15:29:10 +0200
+
 node-webkit (0.7) unstable; urgency=low
 
   * Agregando soporte de codecs video y audio mp3/mp4.
