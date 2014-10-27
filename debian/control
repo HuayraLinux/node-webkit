@@ -2,15 +2,20 @@ Source: node-webkit
 Section: non-free/utils
 Priority: extra
 Maintainer: Hugo Ruscitti <hugoruscitti@gmail.com>
-Build-Depends: debhelper (>= 8.0.0), libudev0|libudev1, libasound2, libatk1.0-0, libcairo2, libdbus-1-3, libexpat1, libfontconfig1, libfreetype6, libgconf-2-4, libgdk-pixbuf2.0-0, libgtk2.0-0, libnspr4, libnspr4-0d, libpango1.0-0, libx11-6, libxcomposite1, libxdamage1, libxext6, libxfixes3, libxrender1
+Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.3
 Homepage: https://github.com/rogerwang/node-webkit
 #Vcs-Git: git://git.debian.org/collab-maint/node-webkit.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/node-webkit.git;a=summary
 
 Package: node-webkit
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libudev0|libudev1, libasound2, libatk1.0-0, libcairo2, libdbus-1-3, libexpat1, libfontconfig1, libfreetype6, libgconf-2-4, libgdk-pixbuf2.0-0, libgtk2.0-0, libnspr4, libnspr4-0d, libnss3, libnss3-1d, libpango1.0-0, libx11-6, libxcomposite1, libxdamage1, libxext6, libxfixes3, libxrender1
+Architecture: i386 amd64
+Depends: ${misc:Depends}, libudev1, libasound2,
+    libatk1.0-0, libcairo2, libdbus-1-3, libexpat1, libfontconfig1,
+    libfreetype6, libgconf-2-4, libgdk-pixbuf2.0-0, libgtk2.0-0,
+    libnspr4, libnspr4-0d, libnss3, libnss3-1d, libpango1.0-0,
+    libx11-6, libxcomposite1, libxdamage1, libxext6, libxfixes3,
+    libxrender1
 Description: Una plataforma para crear aplicaciones HTML5
  node-webkit es una plataforma que permite crear aplicaciones
  utilizando HTML5, webkit y nodejs.

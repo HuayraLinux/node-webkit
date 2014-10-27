@@ -1,3 +1,9 @@
+node-webkit (0.10.5.1) unstable; urgency=medium
+
+  * Nuevo release.
+
+ -- Fernando Toledo <ragnarok@docksud.com.ar>  Thu, 02 Oct 2014 11:37:28 -0300
+
 node-webkit (0.8) unstable; urgency=low
 
   * Arreglo menor en los scripts de generación. 
