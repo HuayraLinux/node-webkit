@@ -1,6 +1,11 @@
-The Debian Package node-webkit
+Paquete node-webkit para Huayra
 ----------------------------
 
-Comments regarding the Package
+Este paquete contiene los binarios de node-webkit para Huayra.
+Lametablemente no hay un sistema optimizado para construir node-webkit
+desde la fuentes, ya que muchas dependecias para ese proceso no estan
+empaquetas todavia.
 
- -- alumno <alumno@localhost.localdomain>  Wed, 18 Dec 2013 15:48:48 +0100
+El paquete instala los binarios originales desde el sitio del upstream
+
+ -- Fernando Toledo <ragnarok@docksud.com.ar>  Wed, 18 Dec 2013 15:48:48 +0100

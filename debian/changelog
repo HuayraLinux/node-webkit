@@ -1,3 +1,10 @@
+node-webkit (0.11.2.1) unstable; urgency=medium
+
+  * Versión node-webkit 0.11.2 
+  * Basado en Node v0.11.13, Chromium 38.0.2125.104
+
+ -- Fernando Toledo <ragnarok@docksud.com.ar>  Wed, 03 Dec 2014 09:50:08 -0300
+
 node-webkit (0.10.5.1) unstable; urgency=medium
 
   * Nuevo release.
