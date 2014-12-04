@@ -2,7 +2,9 @@ node-webkit
 -----------
 
 Este paquete no se genera desde la fuentes, sino que usa los binarios
-originales del sistio del upstream.
+originales del sitio del upstream.
 
+Se agrega la biblioteca libffmpegsumo.so que sale de chromium para tener
+soporte de codecs de video adicionales.
 
 

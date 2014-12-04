@@ -28,6 +28,9 @@ override_dh_install:
 
 	cd packages; tar xvzf node-webkit-v$(CURVER)-linux-$(UPSTREAM_ARCH).tar.gz
 	mv packages/node-webkit-v$(CURVER)-linux-$(UPSTREAM_ARCH) debian/tmp/node-webkit
+	cd packages; tar xvzf libffmpegsumo.so.$(UPSTREAM_ARCH).tar.gz
+	mv packages/libffmpegsumo.so debian/tmp/node-webkit
+
 	dh_install
 
 override_dh_shlibdeps:
