@@ -1,0 +1,15 @@
+Template: node-webkit/create-udev-symlink
+Type: boolean
+Default: true
+Description: Crear enlace simbolico de libudev1 a libudev0:
+ Indique si desea crear el enlance simbolico de libudev para node-webkit
+ .
+ Actualmente en debian (jessie en adelante) existe libudev1 y no libudev0.
+ Sin embargo, el ejecutable binario que se distribuye de node-webkit puede 
+ trabajar estaticamente con la libreria mas nueva aunque su dependencia es
+ con la anterior.
+ .
+ Para solucionar este inconveniente podemos crear automaticamente el enlace
+ simbolico libudev.so.0 apuntando a libudev.so.1.
+ Sabemos que no es la mejor opcion, pero funciona temporalmente hasta que
+ podamos mejorarla.

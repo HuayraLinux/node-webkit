@@ -1,0 +1,47 @@
+#! /bin/sh
+set -e
+
+# Debconf
+. /usr/share/debconf/confmodule
+
+ARCH=`dpkg --print-architecture`
+case "${ARCH}" in
+  amd64)
+    target="x86_64"
+    ;;
+  i386)
+    target="i386"
+    ;;
+  *)
+    echo "ERROR: arquitectura no soportada: ${ARCH}"
+    exit 1
+    ;;
+esac
+
+LIBDIR="/lib/${target}-linux-gnu"
+
+# The following only on a new install
+if [ "$1" = "configure" ]; then
+
+  db_version 2.0
+
+  # The following only on a new install
+  if [ "$2" = "" ]; then
+    echo "Instalando node-webkit por primera vez"
+  fi
+
+  db_get node-webkit/create-udev-symlink
+
+  if [ "$RET" = "true" ]; then
+    if [ ! -f $LIBDIR/libudev.so.0 ]; then 
+      echo "Creando symlink de libudev"
+      ln -s $LIBDIR/libudev.so.1 $LIBDIR/libudev.so.0
+    else
+      echo "El enlace ya existe"
+    fi
+  fi
+
+fi
+
+exit 0
+#DEBHELPER#

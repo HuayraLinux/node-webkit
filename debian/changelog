@@ -1,3 +1,15 @@
+node-webkit (0.11.2.4) unstable; urgency=medium
+
+  * correcciones en los scripts y templates 
+
+ -- Fernando Toledo <ragnarok@docksud.com.ar>  Wed, 31 Dec 2014 14:30:50 -0300
+
+node-webkit (0.11.2.3) unstable; urgency=medium
+
+  * Agregando script para crear symlink de libudev
+
+ -- Fernando Toledo <ragnarok@docksud.com.ar>  Mon, 29 Dec 2014 22:24:33 -0300
+
 node-webkit (0.11.2.2) unstable; urgency=medium
 
   * Agregando libs para mpg4
