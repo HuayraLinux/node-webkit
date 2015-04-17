@@ -1,3 +1,9 @@
+node-webkit (0.12.1.1) unstable; urgency=low
+
+  * Actualizando la 0.12.1 de nwjs.
+
+ -- Hugo Ruscitti <hugoruscitti@gmail.com>  Fri, 17 Apr 2015 12:29:58 -0300
+
 node-webkit (0.11.2.4) unstable; urgency=medium
 
   * correcciones en los scripts y templates 
