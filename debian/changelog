@@ -1,3 +1,9 @@
+node-webkit (0.12.1.2) unstable; urgency=low
+
+  * Agrego NODE_PATH al ejecutable de nw.
+
+ -- Mauro <mauro@sdf.org>  Mon, 21 Sep 2015 14:48:31 -0300
+
 node-webkit (0.12.1.1) unstable; urgency=low
 
   * Actualizando la 0.12.1 de nwjs.

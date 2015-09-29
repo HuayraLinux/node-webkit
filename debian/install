@@ -1,1 +1,2 @@
 debian/tmp/node-webkit/* usr/share/node-webkit
+debian/nw-path.sh usr/share/node-webkit
