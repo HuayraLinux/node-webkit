@@ -11,6 +11,7 @@
 # build-arch and build-indep targets  by Bill Allombert 2001
 
 # Uncomment this to turn on verbose mode.
+export ARCH=$(shell dpkg --print-architecture)
 export DH_VERBOSE=1
 export CURVER=$(shell dpkg-parsechangelog -SVersion| sed -re 's,.([0-9])+$$,,')
 
