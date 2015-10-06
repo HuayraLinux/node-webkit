@@ -1,3 +1,12 @@
+node-webkit (0.12.3.1) experimental; urgency=low
+
+  * Nuevo release de nw.js
+  * compat 9
+  * bump standards-version
+  * reorganizacion de debian/rules
+
+ -- Mauro <mauro@sdf.org>  Mon, 05 Oct 2015 17:50:02 -0300
+
 node-webkit (0.12.1.3) unstable; urgency=low
 
   * Agrego `dpkg --print-architecture` para verificar correctamente

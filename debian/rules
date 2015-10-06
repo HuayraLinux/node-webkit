@@ -1,18 +1,9 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
-# Sample debian/rules that uses debhelper.
-#
-# This file was originally written by Joey Hess and Craig Small.
-# As a special exception, when this file is copied by dh-make into a
-# dh-make output file, you may use that output file without restriction.
-# This special exception was added by Craig Small in version 0.37 of dh-make.
-#
-# Modified to make a template file for a multi-binary package with separated
-# build-arch and build-indep targets  by Bill Allombert 2001
 
-# Uncomment this to turn on verbose mode.
-export ARCH=$(shell dpkg --print-architecture)
 export DH_VERBOSE=1
+export PKG = $(word 2,$(shell dpkg-parsechangelog | grep ^Source))
+export ARCH=$(shell dpkg --print-architecture)
 export CURVER=$(shell dpkg-parsechangelog -SVersion| sed -re 's,.([0-9])+$$,,')
 
 ifeq ($(ARCH), i386)
@@ -21,18 +12,30 @@ else
     export UPSTREAM_ARCH=x64
 endif
 
+export NW_BASE = node-webkit-v$(CURVER)-linux-$(UPSTREAM_ARCH)
+export NW_TGZ = $(NW_BASE).tar.gz
+export NW_VER = $(CURVER)-linux-$(UPSTREAM_ARCH)
+
 %:
 	dh $@
 
+override_dh_auto_build: get-orig-source
+	dh_auto_build
+
 override_dh_install:
-	mkdir debian/tmp
-
-	cd packages; tar xvzf node-webkit-v$(CURVER)-linux-$(UPSTREAM_ARCH).tar.gz
-	mv packages/node-webkit-v$(CURVER)-linux-$(UPSTREAM_ARCH) debian/tmp/node-webkit
-	cd packages; tar xvzf libffmpegsumo.so.$(UPSTREAM_ARCH).tar.gz
-	mv packages/libffmpegsumo.so debian/tmp/node-webkit
-
+	mkdir -p $(CURDIR)/debian/tmp/$(PKG)
+	tar xvzf $(CURDIR)/packages/$(PKG)_$(NW_VER).orig.tar.gz --directory $(CURDIR)/debian/tmp/$(PKG) --strip=1
+	tar xvzf $(CURDIR)/packages/libffmpegsumo.so.$(UPSTREAM_ARCH).tar.gz --directory $(CURDIR)/debian/tmp/$(PKG)
 	dh_install
+
+override_dh_auto_clean:
+	rm -fr packages/$(PKG)_$(NW_VER).orig.tar.gz
+	rm -fr packages/libffmpegsumo.so
+	rm -fr debian/tmp
 
 override_dh_shlibdeps:
 	echo "override"
+
+.PHONY: get-orig-source
+get-orig-source:
+	uscan --noconf --verbose --rename --destdir=$(CURDIR)/packages/ --check-dirname-level=0 --force-download --download-version $(NW_VER)
