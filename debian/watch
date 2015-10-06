@@ -1,0 +1,3 @@
+version=3
+
+http://dl.nwjs.io/latest/nwjs-v(.+)\.tar\.gz
