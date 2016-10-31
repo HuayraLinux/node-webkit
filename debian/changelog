@@ -1,3 +1,9 @@
+node-webkit (0.12.3.2) unstable; urgency=medium
+
+  * Sacando dependencia de transicion libnss3-1d
+
+ -- Fernando Toledo <ragnarok@docksud.com.ar>  Mon, 31 Oct 2016 13:47:55 -0300
+
 node-webkit (0.12.3.1) experimental; urgency=low
 
   * Nuevo release de nw.js
