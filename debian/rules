@@ -5,6 +5,7 @@ export DH_VERBOSE=1
 export PKG = $(word 2,$(shell dpkg-parsechangelog | grep ^Source))
 export ARCH=$(shell dpkg --print-architecture)
 export CURVER=$(shell dpkg-parsechangelog -SVersion| sed -re 's,.([0-9])+$$,,')
+export NW_ORIG=nwjs
 
 ifeq ($(ARCH), i386)
     export UPSTREAM_ARCH=ia32
@@ -12,20 +13,20 @@ else
     export UPSTREAM_ARCH=x64
 endif
 
-export NW_BASE = node-webkit-v$(CURVER)-linux-$(UPSTREAM_ARCH)
+export NW_BASE = $(NW_ORIG)-v$(CURVER)-linux-$(UPSTREAM_ARCH)
 export NW_TGZ = $(NW_BASE).tar.gz
 export NW_VER = $(CURVER)-linux-$(UPSTREAM_ARCH)
 
 %:
 	dh $@
 
-override_dh_auto_build: get-orig-source
-	dh_auto_build
+# override_dh_auto_build: get-orig-source
+# 	dh_auto_build
 
 override_dh_install:
 	mkdir -p $(CURDIR)/debian/tmp/$(PKG)
-	tar xvzf $(CURDIR)/packages/$(PKG)_$(NW_VER).orig.tar.gz --directory $(CURDIR)/debian/tmp/$(PKG) --strip=1
-	tar xvzf $(CURDIR)/packages/libffmpegsumo.so.$(UPSTREAM_ARCH).tar.gz --directory $(CURDIR)/debian/tmp/$(PKG)
+	tar xvzf $(CURDIR)/packages/$(NW_ORIG)-$(NW_VER).tar.gz --directory $(CURDIR)/debian/tmp/$(PKG) --strip=1
+#	tar xvzf $(CURDIR)/packages/libffmpegsumo.so.$(UPSTREAM_ARCH).tar.gz --directory $(CURDIR)/debian/tmp/$(PKG)
 	dh_install
 
 override_dh_auto_clean:
@@ -36,6 +37,6 @@ override_dh_auto_clean:
 override_dh_shlibdeps:
 	echo "override"
 
-.PHONY: get-orig-source
-get-orig-source:
-	uscan --noconf --verbose --rename --destdir=$(CURDIR)/packages/ --check-dirname-level=0 --force-download --download-version $(NW_VER)
+# .PHONY: get-orig-source
+# get-orig-source:
+#	uscan --noconf --verbose --rename --destdir=$(CURDIR)/packages/ --check-dirname-level=0 --force-download --download-version $(NW_VER)

@@ -2,7 +2,7 @@ Source: node-webkit
 Section: non-free/utils
 Priority: extra
 Maintainer: Hugo Ruscitti <hugoruscitti@gmail.com>
-Build-Depends: debhelper (>= 9.0.0), devscripts, libwww-perl
+Build-Depends: debhelper (>= 9.0.0), devscripts, libwww-perl, gnupg2
 Standards-Version: 3.9.6
 Homepage: https://github.com/rogerwang/node-webkit
 Vcs-Git: https://github.com/HuayraLinux/node-webkit.git
